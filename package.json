@@ -1,0 +1,30 @@
+{
+  "name": "fantstatic-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "rollup": "^2.34.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "dotenv": "^8.2.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "scripts": {
+    "build": "rollup --config",
+    "watch:js:dist": "rollup -c -w",
+    "build:js:public": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/web-disciple/fantstatic-v2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/web-disciple/fantstatic-v2/issues"
+  },
+  "homepage": "https://github.com/web-disciple/fantstatic-v2#readme"
+}
