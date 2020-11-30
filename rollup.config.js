@@ -1,5 +1,6 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
 
 // `npm run watch:js` -> `production` is true
@@ -9,7 +10,7 @@ const production = !process.env.ROLLUP_WATCH;
 export default [
 	//main.js call on all pages
 	{
-		input: '_dev/js/main.js',
+		input: '_dev/js/main.ts',
 		output: {
 			file: production ? 'public/js/main.js' : 'dist/js/main.js',
 			format: 'iife', // immediately-invoked function expression — suitable for <script> tags
@@ -23,7 +24,7 @@ export default [
 	},
 	// specifics scripts
 	{
-		input: '_dev/js/pages/homepage.js',
+		input: '_dev/js/pages/homepage.ts',
 		output: {
 			file: production ? 'public/js/pages/homepage.js' : 'dist/js/pages/homepage.js',
 			format: 'iife',
@@ -32,7 +33,8 @@ export default [
 		plugins: [
 			resolve(),
 			commonjs(),
-			production && terser()
+			production && terser(),
+			typescript()
 		]
 	}
 ];
